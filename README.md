@@ -9,7 +9,7 @@ It also allows the use of the following statements in tests:
 
 ```php
 // Execute "drush cc all"
-$I->getDrush("cc", array("all"))->mustRun();
+$I->getDrush("cr")->mustRun();
 ```
 
 ## Install with Composer
@@ -17,8 +17,8 @@ $I->getDrush("cc", array("all"))->mustRun();
 ```json
 {
     "require": {
-        "codeception/codeception": "~2.0.0",
-        "ixis/codeception-drupal-drush": "~0.1"
+        "codeception/codeception": "^2.2",
+        "guncha25/codeception-drupal-drush": "~0.3"
     }
 }
 ```
@@ -37,10 +37,4 @@ modules:
     config:
         PhpBrowser:
             url: 'http://localhost/myapp/'
-        DrupalDrush:
-            drush-alias: '@mysite.local' # The Drush alias to use (required).
 ```
-
-### Required configuration
-
-* `drush-alias` is required.
