@@ -37,4 +37,8 @@ modules:
     config:
         PhpBrowser:
             url: 'http://localhost/myapp/'
+        DrupalDrush:
+            working_directory: '/path/to/webroot'
+
 ```
+The option `working_directory` may be ommited, it defaults to the current directory.

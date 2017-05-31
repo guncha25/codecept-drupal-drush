@@ -32,6 +32,11 @@ class DrupalDrush extends Module {
         $command_args = array_merge($args, $arguments);
         $processBuilder = new ProcessBuilder($command_args);
 
+        // Set working directory if configured.
+        if ($pwd = $this->_getConfig('working_directory')) {
+          $processBuilder->setWorkingDirectory($pwd);
+        }
+
         foreach ($options as $option) {
           $processBuilder->add($option);
         }
